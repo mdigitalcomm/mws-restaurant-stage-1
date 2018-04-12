@@ -21,10 +21,15 @@ a {
 	color: orange;
 	text-decoration: none;
 }
-a:hover, a:focus {
+a:hover {
 	color: #3397db;
 	text-decoration: none;
 }
+
+h1:focus, h2:focus, img:focus, p:focus, table:focus, a:focus {
+  outline: 2px solid red;
+}
+
 a img{
 	border: none 0px #fff;
 }
@@ -118,6 +123,10 @@ nav h1 a {
   line-height: 1;
   margin: 0 20px;
 }
+
+.filter-options h2:focus {
+  outline: 1px solid red;
+}
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
@@ -128,6 +137,16 @@ nav h1 a {
   margin: 10px;
   padding: 0 10px;
   width: 200px;
+}
+
+.filter-options:focus, .filter-options select:focus {
+  color: #3397db;
+  outline: 2px solid red;
+}
+
+#restaurants-list:focus, #restaurants-list li a:focus {
+  background-color: red;
+  outline: 2px solid red;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -270,6 +289,10 @@ nav h1 a {
 }
 
 @media only screen and (max-width: 800px) {
+  nav h1 a {
+    letter-spacing: 8px;
+  }
+
   #restaurants-list li {
     margin: 10px 0;
   }

@@ -16,12 +16,12 @@
   </header>
 
   <main id="maincontent">
-    <section id="map-container">
+    <section id="map-container" tabindex="-1">
       <div id="map"></div>
     </section>
     <section>
       <div class="filter-options">
-        <h2>Filter Results</h2>
+        <h2  tabindex="0">Filter Results</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
@@ -36,7 +36,16 @@
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqQLoVU4mfcbs2HQVLsdmRu9jMWgNGQas&libraries=places&callback=initMap"></script>
-
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').then(function() {
+        console.log("Service Worker Registered!");
+      })
+      .catch(function(error) {
+        console.log("Service worker failed to register", error);
+      });
+    };
+  </script>
 
   <footer id="footer">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
