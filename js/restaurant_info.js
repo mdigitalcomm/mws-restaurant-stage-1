@@ -62,6 +62,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
+  cuisine.tabIndex = 0;
 
   // fill operating hours
   if (restaurant.operating_hours) {
@@ -121,7 +122,6 @@ createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
   name.innerHTML = review.name;
-  name.tabIndex = 0;
   li.appendChild(name);
 
   const date = document.createElement('p');

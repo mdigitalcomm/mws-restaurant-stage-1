@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -9,19 +10,21 @@
 </head>
 
 <body>
-  <header>
+  <header>    
+    <a class="skip-link" href="#main-text-content">Skip map to main content</a>
+ 
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
   <main id="maincontent">
-    <section id="map-container" tabindex="-1">
+    <section id="map-container">
       <div id="map"></div>
     </section>
-    <section>
+    <section id="main-text-content">
       <div class="filter-options">
-        <h2  tabindex="0">Filter Results</h2>
+        <h2>Filter Results</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
@@ -29,7 +32,9 @@
           <option value="all">All Cuisines</option>
         </select>
       </div>
-      <ul id="restaurants-list"  class="flex-container"></ul>
+      <div class="flex-container">
+        <ul id="restaurants-list""></ul>
+      </div>
     </section>
   </main>
 
