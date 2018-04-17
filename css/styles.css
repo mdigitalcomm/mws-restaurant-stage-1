@@ -26,8 +26,10 @@ a:hover {
 	text-decoration: none;
 }
 
-h1:focus, h2:focus, img:focus, p:focus, table:focus, a:focus {
-  outline: 2px solid red;
+:focus {
+  outline: 2px solid #3397db;
+  color: #3397db;
+  font-weight: bold;
 }
 
 a img{
@@ -40,6 +42,22 @@ h1, h2, h3, h4, h5, h6 {
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+a.skip-link {
+  position:absolute;
+  top: -40px;
+  left: 0;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+a.skip-link:focus {
+  top: 0;
+  outline: 2px solid #3397db;
+  color: #3397db;
+}
+
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
@@ -59,7 +77,6 @@ nav {
   background-color: #252831;
   text-align:center;
   padding: 20px 0;
-  /*position: fixed;*/
 }
 nav h1 {
   margin: auto;
@@ -124,9 +141,6 @@ nav h1 a {
   margin: 0 20px;
 }
 
-.filter-options h2:focus {
-  outline: 1px solid red;
-}
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
@@ -139,28 +153,21 @@ nav h1 a {
   width: 200px;
 }
 
-.filter-options:focus, .filter-options select:focus {
-  color: #3397db;
-  outline: 2px solid red;
-}
 
-#restaurants-list:focus, #restaurants-list li a:focus {
-  background-color: red;
-  outline: 2px solid red;
-}
 
 /* ====================== Restaurant Listing ====================== */
+
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: outside none none;
-  margin: 0 auto;
-  padding: 30px 15px 60px;
+  margin: auto;
+  padding-left: 0;
   text-align: center;
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-}
+/*  justify-content: center;
+*/}
 
 #restaurants-list li {
   background-color: #fff;
@@ -173,7 +180,6 @@ nav h1 a {
   text-align: left;
   min-width: 250px;
   max-width: 350px;
-
 }
 #restaurants-list .restaurant-img {
   display: block;
@@ -209,7 +215,9 @@ nav h1 a {
   text-transform: uppercase;
 }
 
-
+#restaurants-list li a:focus {
+  color: #3397db;
+}
 
 /* ====================== Restaurant Details ====================== */
 .inside header {
