@@ -72,13 +72,11 @@ a.skip-link:focus {
   text-transform: uppercase;
 }
 /* ====================== Navigation ====================== */
-nav {
+nav h1 {
   width: 100%;
   background-color: #252831;
   text-align:center;
   padding: 20px 0;
-}
-nav h1 {
   margin: auto;
 }
 nav h1 a {
